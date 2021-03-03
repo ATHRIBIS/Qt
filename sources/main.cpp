@@ -16,6 +16,7 @@ int main(int argc, char *argv[]) {
     button.setText("Bonsoir la Vendée !"); //Set un texte
     button.setToolTip("C'est la Vendée !");
     button.setFont(maPolice);
+    button.setFont(QFont("Courier")); //On défini directement ici l'objet QFont
 
     button.show();
     button.setBaseSize(50, 100);
