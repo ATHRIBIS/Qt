@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(untitled2)
+project(Qt)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_PREFIX_PATH "/Users/aymericschaeffer/Qt/5.15.2/clang_64/lib/cmake")
@@ -12,7 +12,6 @@ set(REQUIRED_LIBS Core Gui Widgets)
 set(REQUIRED_LIBS_QUALIFIED Qt5::Core Qt5::Gui Qt5::Widgets)
 
 add_executable(${PROJECT_NAME} sources/main.cpp)
-
 
 find_package(Qt${QT_VERSION} COMPONENTS ${REQUIRED_LIBS} REQUIRED)
 target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIBS_QUALIFIED})
