@@ -13,8 +13,9 @@ int main(int argc, char *argv[]) {
     QPushButton button("Pimp mon button!", &fenetre); //Création du bouton
     button.setFont(QFont("Courier"));
     button.setCursor(QCursor(Qt::BitmapCursor));
+    button.setGeometry(50, 50, 200, 30); //Defini la taille et l'emplacement
 
     fenetre.show();
 
-    return application.exec();
+    return QApplication::exec();
 }
