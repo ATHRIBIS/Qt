@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
      * Création d'un deuxième bouton
      */
     QPushButton otherButton("Autre", &button);
-    otherButton.move(30, 40);
+    otherButton.move(10, 5);
 
     fenetre.show();
 
