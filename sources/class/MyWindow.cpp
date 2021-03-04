@@ -4,13 +4,13 @@
 
 #include "MyWindow.h"
 
-MyWindow::MyWindow() : QWidget() { //Constructeur de la fenetre
+MyWindow::MyWindow(int x, int y) : QWidget() { //Constructeur de la fenetre
     /*
      * : QWidget()
      * Fait appel au constructeur par défaut de QWidget
      */
 
-    setFixedSize(300, 150);
+    setFixedSize(x, y);
 
     /*
      * Construction du bouton
@@ -20,4 +20,8 @@ MyWindow::MyWindow() : QWidget() { //Constructeur de la fenetre
     m_button->setFont(QFont("Courier", 16));
     m_button->setCursor(QCursor(Qt::DragCopyCursor));
     m_button->move(60,50);
+}
+
+MyWindow::~MyWindow() {
+    delete m_button;
 }

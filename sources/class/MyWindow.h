@@ -11,7 +11,9 @@
 
 class MyWindow : public QWidget { //Notre fenetre hérite de la classe QWidget qui permet de faire une fenetre
 public:
-    MyWindow();
+    MyWindow(int x=500, int y=100); //Surcharge trkl
+    ~MyWindow();
+
 private:
     QPushButton *m_button;
 };
