@@ -1,28 +1,14 @@
 #include <QApplication>
-#include <QPushButton>
-#include <QtGui> //Inclue toute les classes du module GUI, peut ralentir la compilation
+#include "class/MyWindow.h" //Contenant notre constructeur de fenetre principale
 
 int main(int argc, char *argv[]) {
     QApplication application(argc, argv);
 
-    QWidget fenetre; //Création d'un widget qui servira de fenêtre
-    fenetre.setFixedSize(300, 150);
-
     /*
-     * Créatoin du bouton dans la fenêtre
+     * On fait appel a notre classe héritant de QWidget
      */
-    QPushButton button("Pimp mon button!", &fenetre); //Création du bouton
-    button.setFont(QFont("Courier"));
-    button.setCursor(QCursor(Qt::BitmapCursor));
-    button.setGeometry(50, 50, 200, 30); //Defini la taille et l'emplacement
-
-    /*
-     * Création d'un deuxième bouton
-     */
-    QPushButton otherButton("Autre", &button);
-    otherButton.move(10, 5);
-
-    fenetre.show();
+    MyWindow window; //On créer
+    window.show(); //On affiche
 
     return QApplication::exec();
 }
