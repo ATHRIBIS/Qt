@@ -6,20 +6,14 @@ int main(int argc, char *argv[]) {
     QPushButton button("Bonjour !");
 
     /*
-     * Création d'une police
-     */
-    QFont maPolice("Courier");
-
-    /*
      * Création d'un bouton
      */
     button.setText("Bonsoir la Vendée !"); //Set un texte
     button.setToolTip("C'est la Vendée !");
-    button.setFont(maPolice);
-    button.setFont(QFont("Courier")); //On défini directement ici l'objet QFont
+    button.setFont(QFont("Courier", 20, QFont::Bold, true)); //On défini directement ici l'objet QFont
 
     button.show();
-    button.setBaseSize(50, 100);
+    button.setBaseSize(300, 100);
 
     return QApplication::exec();
 }
