@@ -7,7 +7,7 @@ int main(int argc, char *argv[]) {
     /*
      * On fait appel a notre classe héritant de QWidget
      */
-    MyWindow window(1900,1080); //On créer
+    MyWindow window(10,30); //On créer
     window.show(); //On affiche
 
     return QApplication::exec();
