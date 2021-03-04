@@ -8,14 +8,24 @@
 #include "QApplication"
 #include "QWidget"
 #include "QPushButton"
+#include "QSlider"
 
 class MaFenetre : public QWidget {
+    /*
+     * Créons une macro pour un slot personnalisé
+     */
+    Q_OBJECT
 public:
     MaFenetre();
     ~MaFenetre();
 
+public slots:
+    void changerLargeur(int largeur);
+    void changerHauteur(int hauteur);
+
 private:
-    QWidget *m_premierBouton;
+    QSlider *m_sliderL;
+    QSlider *m_sliderH;
 };
 
 
