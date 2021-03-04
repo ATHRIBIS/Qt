@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QPushButton>
+#include <QtGui> //Inclue toute les classes du module GUI, peut ralentir la compilation
 
 int main(int argc, char *argv[]) {
     QApplication application(argc, argv);
