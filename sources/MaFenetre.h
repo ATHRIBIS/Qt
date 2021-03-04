@@ -9,6 +9,7 @@
 #include "QWidget"
 #include "QPushButton"
 #include "QLCDNumber"
+#include "QProgressBar"
 #include "QSlider"
 
 
@@ -19,7 +20,9 @@ public:
 
 private:
     QLCDNumber *m_lcd;
+    QProgressBar *m_progssBarr;
     QSlider *m_slider;
+    QSlider *m_slider2;
 };
 
 
