@@ -1,9 +1,11 @@
 #include <QApplication>
 #include <QPushButton>
-
+#include "class/MaFenetre.h"
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-    QPushButton button("Hi my name is Kilo");
-    button.show();
+
+    MaFenetre maFenetre;
+    maFenetre.show();
+
     return QApplication::exec();
 }
