@@ -15,6 +15,12 @@ int main(int argc, char *argv[]) {
     button.setCursor(QCursor(Qt::BitmapCursor));
     button.setGeometry(50, 50, 200, 30); //Defini la taille et l'emplacement
 
+    /*
+     * Création d'un deuxième bouton
+     */
+    QPushButton otherButton("Autre", &button);
+    otherButton.move(30, 40);
+
     fenetre.show();
 
     return QApplication::exec();
