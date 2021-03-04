@@ -8,6 +8,9 @@
 #include "QApplication"
 #include "QWidget"
 #include "QPushButton"
+#include "QLCDNumber"
+#include "QSlider"
+
 
 class MaFenetre : public QWidget {
 public:
@@ -15,7 +18,8 @@ public:
     ~MaFenetre();
 
 private:
-    QWidget *m_premierBouton;
+    QLCDNumber *m_lcd;
+    QSlider *m_slider;
 };
 
 
