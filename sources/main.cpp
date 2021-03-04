@@ -12,6 +12,7 @@ int main(int argc, char *argv[]) {
     button.setToolTip("C'est la Vendée !");
     button.setFont(QFont("Courier", 20, QFont::Bold, true)); //On défini directement ici l'objet QFont
     button.setCursor(Qt::BusyCursor);
+    button.setIcon(QIcon("../img/plants.jpg"));
 
     button.show();
     button.setBaseSize(300, 100);
