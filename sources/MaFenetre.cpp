@@ -8,11 +8,10 @@
 MaFenetre::MaFenetre() : QWidget() {
     setFixedSize(230,120);
 
-    m_boutonDialogue = new QPushButton("Ouvrir la boîte de dialogue", this);
+    m_boutonDialogue = new QPushButton("Police", this);
     m_boutonDialogue->move(20,50);
 
     QObject::connect(m_boutonDialogue, SIGNAL(clicked(bool)), this, SLOT(ouvrirDialogue()));
-    QObject::connect(this, SIGNAL(pseudoEntre()), this, SLOT(update()));
 }
 
 void MaFenetre::ouvrirDialogue() {
@@ -33,13 +32,24 @@ void MaFenetre::ouvrirDialogue() {
      * On créé une fenetre de dialogue de saisie
      * On vérifie maitenant si le bouton ok est cliqué
      */
-    bool ok = false; //pour bouton ok
-    QString pseudo = QInputDialog::getText(this, "Pseudo", "Quel est votre pseudo ?", QLineEdit::Normal, QString(), &ok); //assigne la variable ok a true si OK cliqué
+//    bool ok = false; //pour bouton ok
+//    QString pseudo = QInputDialog::getText(this, "Le moche", "Qui est moche ici ?", QLineEdit::Normal, QString(), &ok); //assigne la variable ok a true si OK cliqué
+//
+//    if (ok && !pseudo.isEmpty()) { //Dans le cas ou ok est cliqué et que le pseudo n'est pas vide
+//        m_boutonDialogue->setText(pseudo);
+//        QMessageBox::information(this, "Ok!", "J'avoue " + pseudo + " est trop moche !");
+//    } else {
+//        m_boutonDialogue->setText(pseudo);
+//        QMessageBox::critical(this, "Erreur!", "Veuillez rentrer un nom !");
+//    }
 
-    if (ok && !pseudo.isEmpty()) { //Dans le cas ou ok est cliqué et que le pseudo n'est pas vide
-        QMessageBox::information(this, "Ok!", "Votre pseudo est " + pseudo + " !");
-    } else {
-        QMessageBox::critical(this, "Erreur!", "Veuillez rentrer un pseudo !");
+    /*
+     * Selectionnons une police
+     */
+    bool ok = false; //pour vérifier le bouton chosit
+    QFont police = QFontDialog::getFont(&ok, m_boutonDialogue->font(), this, "Choissisez une police");
+    if (ok) {
+        m_boutonDialogue->setFont(police);
     }
 
 }
