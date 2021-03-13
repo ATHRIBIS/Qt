@@ -23,6 +23,9 @@ public slots:
     void changerLargeur(int largeur);
     void changerHauteur(int hauteur);
 
+    signals:
+    void aggrandissmntMaxL();
+
 private:
     QSlider *m_sliderL;
     QSlider *m_sliderH;

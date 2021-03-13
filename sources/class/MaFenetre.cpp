@@ -19,6 +19,11 @@ MaFenetre::MaFenetre() : QWidget() {
 
     QObject::connect(m_sliderL, SIGNAL(valueChanged(int)), this, SLOT(changerLargeur(int)));
     QObject::connect(m_sliderH, SIGNAL(valueChanged(int)), this, SLOT(changerHauteur(int)));
+    QObject::connect(this, SIGNAL(aggrandissmntMaxL()), qApp, SLOT(aboutQt()));
+    /*
+     * Pour un schema UML
+     * voir p410
+     */
 }
 
 MaFenetre::~MaFenetre() {
@@ -28,6 +33,9 @@ MaFenetre::~MaFenetre() {
 
 void MaFenetre::changerLargeur(int largeur) {
     setFixedSize(largeur, height());
+    if (largeur == 1000) {
+        emit aggrandissmntMaxL(); //On emet un signal
+    }
 }
 
 void MaFenetre::changerHauteur(int largeur) {
