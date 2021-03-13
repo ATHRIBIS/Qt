@@ -14,14 +14,15 @@ MaFenetre::MaFenetre() : QWidget() {
 
 void MaFenetre::ouvrirDialogue() {
     //Insérer ici le code d'ouverture d'une boite de dialogue
-    /*
-     * information: affiche une information
-     * @parent: l'objet parent
-     * @title: le titre de la fenetre
-     * @text: l'information a afficher dans la boite de dialogue
-     */
-    QMessageBox::information(this, QString("Titre boite dialogue"), QString("[Finished]"), QMessageBox::Close | QMessageBox::NoToAll); //| est un flag
-    QMessageBox::warning(this, QString("Titre boite dialogue"), QString("[Warning]"));
-    QMessageBox::critical(this, QString("Titre boite dialogue"), QString("[Critical]"));
-    QMessageBox::question(this, QString("Titre boite dialogue"), QString("[Question]"));
+
+    //On créé une varibale answer
+    //C'est ce qu'on appel une énumartion : en réalité le type n'est pas int mais bien QMessageButton (pour une mielleure lecture)
+    int answer = QMessageBox::question(this, QString("Couleur de cheveux"), QString("Êtes vous blond ?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+
+    //On vérifie la réponse et y attribue une action
+    if (answer == QMessageBox::Yes) {
+        QMessageBox::information(this, "Blond", "<a href=\"https://www.youtube.com/watch?v=TBAoMsLODKI\">Vous êtes blond ! blond ! blond !</a>");
+    } else {
+        QMessageBox::critical(this, "Pas blond", "Sortez immédiatement de ce programme autorisé uniquement aux personnes blondes !");
+    }
 }
