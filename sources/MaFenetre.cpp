@@ -32,6 +32,7 @@ void MaFenetre::ouvrirDialogue() {
      * On créé une fenetre de dialogue de saisie
      * On vérifie maitenant si le bouton ok est cliqué
      */
+
 //    bool ok = false; //pour bouton ok
 //    QString pseudo = QInputDialog::getText(this, "Le moche", "Qui est moche ici ?", QLineEdit::Normal, QString(), &ok); //assigne la variable ok a true si OK cliqué
 //
@@ -48,13 +49,20 @@ void MaFenetre::ouvrirDialogue() {
      * et une couleur
      */
 
-    bool ok = false; //pour vérifier le bouton chosit
-    QFont police = QFontDialog::getFont(&ok, m_boutonDialogue->font(), this, "Choissisez une police");
-    if (ok) {
-        m_boutonDialogue->setFont(police);
-    }
-    QColor color = QColorDialog::getColor(Qt::white, this);
-    QPalette palette;
-    palette.setColor(QPalette::ButtonText, color);
-    m_boutonDialogue->setPalette(palette);
+//    bool ok = false; //pour vérifier le bouton chosit
+//    QFont police = QFontDialog::getFont(&ok, m_boutonDialogue->font(), this, "Choissisez une police");
+//    if (ok) {
+//        m_boutonDialogue->setFont(police);
+//    }
+//    QColor color = QColorDialog::getColor(Qt::white, this);
+//    QPalette palette;
+//    palette.setColor(QPalette::ButtonText, color);
+//    m_boutonDialogue->setPalette(palette);
+
+    /*
+     * Selection d'un dossier
+     */
+    QString dossier = QFileDialog::getExistingDirectory(this);
+    QString fichier = QFileDialog::getOpenFileName(this, "Selectionnez un fichier", QString(), "Images (*.png *.jpg *.jpeg)");
+    QMessageBox::information(this, "Fichier", "Vous avez selectionné :\n" + fichier);
 }

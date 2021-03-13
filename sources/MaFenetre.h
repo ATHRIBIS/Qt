@@ -10,8 +10,9 @@
 #include <QPushButton>
 #include <QMessageBox> //Necessaire pour afficher des boites de dialogue
 #include <QInputDialog> //Necessaire pour afficher des boites de dialogue de saisie
-#include <QFontDialog> //Necessaire pour afficher une boite de dialogue de depolice
-#include <QColorDialog> //Necessaire pour afficher une boite de dialogue de depolice
+#include <QFontDialog> //Necessaire pour afficher une boite de dialogue de de police
+#include <QColorDialog> //Necessaire pour afficher une boite de dialogue de couleur
+#include <QFileDialog> //Necessaire pour afficher une boite de dialogue de fichier et dossier
 /*
  * Demande :
  * ::getText -> text
