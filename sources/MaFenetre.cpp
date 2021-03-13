@@ -45,11 +45,16 @@ void MaFenetre::ouvrirDialogue() {
 
     /*
      * Selectionnons une police
+     * et une couleur
      */
+
     bool ok = false; //pour vérifier le bouton chosit
     QFont police = QFontDialog::getFont(&ok, m_boutonDialogue->font(), this, "Choissisez une police");
     if (ok) {
         m_boutonDialogue->setFont(police);
     }
-
+    QColor color = QColorDialog::getColor(Qt::white, this);
+    QPalette palette;
+    palette.setColor(QPalette::ButtonText, color);
+    m_boutonDialogue->setPalette(palette);
 }

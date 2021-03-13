@@ -11,6 +11,7 @@
 #include <QMessageBox> //Necessaire pour afficher des boites de dialogue
 #include <QInputDialog> //Necessaire pour afficher des boites de dialogue de saisie
 #include <QFontDialog> //Necessaire pour afficher une boite de dialogue de depolice
+#include <QColorDialog> //Necessaire pour afficher une boite de dialogue de depolice
 /*
  * Demande :
  * ::getText -> text
