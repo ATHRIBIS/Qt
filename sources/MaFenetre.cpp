@@ -3,6 +3,8 @@
 //
 
 #include "MaFenetre.h"
+
+
 MaFenetre::MaFenetre() : QWidget() {
     setFixedSize(230,120);
 
@@ -10,6 +12,7 @@ MaFenetre::MaFenetre() : QWidget() {
     m_boutonDialogue->move(20,50);
 
     QObject::connect(m_boutonDialogue, SIGNAL(clicked(bool)), this, SLOT(ouvrirDialogue()));
+    QObject::connect(this, SIGNAL(pseudoEntre()), this, SLOT(update()));
 }
 
 void MaFenetre::ouvrirDialogue() {
@@ -28,6 +31,15 @@ void MaFenetre::ouvrirDialogue() {
 
     /*
      * On créé une fenetre de dialogue de saisie
+     * On vérifie maitenant si le bouton ok est cliqué
      */
-    QString pseudo = QInputDialog::getText(this, "Pseudo", "Quel est votre pseudo ?");
+    bool ok = false; //pour bouton ok
+    QString pseudo = QInputDialog::getText(this, "Pseudo", "Quel est votre pseudo ?", QLineEdit::Normal, QString(), &ok); //assigne la variable ok a true si OK cliqué
+
+    if (ok && !pseudo.isEmpty()) { //Dans le cas ou ok est cliqué et que le pseudo n'est pas vide
+        QMessageBox::information(this, "Ok!", "Votre pseudo est " + pseudo + " !");
+    } else {
+        QMessageBox::critical(this, "Erreur!", "Veuillez rentrer un pseudo !");
+    }
+
 }
