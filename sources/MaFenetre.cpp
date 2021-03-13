@@ -65,4 +65,7 @@ void MaFenetre::ouvrirDialogue() {
     QString dossier = QFileDialog::getExistingDirectory(this);
     QString fichier = QFileDialog::getOpenFileName(this, "Selectionnez un fichier", QString(), "Images (*.png *.jpg *.jpeg)");
     QMessageBox::information(this, "Fichier", "Vous avez selectionné :\n" + fichier);
+    QString fichierAEnregistrer = QFileDialog::getSaveFileName(this, "Enregistrez votre fichier", QString(), "Images (*.png *.jpg *.jpeg)");
+
+
 }
